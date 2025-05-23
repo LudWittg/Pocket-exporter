@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pocket-exporter"
+version = "0.1.0"
+description = "Pocket API exporter with streaming support"
+requires-python = ">=3.8"
+dependencies = [
+    "requests>=2.28.0",
+    "cryptography>=3.4.8",
+    "keyring>=23.0.0",
+]
+
+[project.scripts]
+pocket-exporter = "pocket_exporter:main"
+
+[tool.setuptools]
+py-modules = ["pocket_exporter"]

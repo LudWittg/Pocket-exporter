@@ -1,0 +1,31 @@
+{
+  "_comment": "Pocket Exporter Configuration File",
+  "_description": "Customize export behavior and API limits. All values shown are defaults.",
+  
+  "batch_size": 500,
+  "_batch_size_note": "Number of items to fetch per API request (max 5000, recommended 500-1000)",
+  
+  "max_retries": 5,
+  "_max_retries_note": "Maximum number of retry attempts for failed requests",
+  
+  "base_delay": 1.0,
+  "_base_delay_note": "Base delay in seconds between requests (minimum interval)",
+  
+  "max_delay": 60.0,
+  "_max_delay_note": "Maximum delay in seconds for exponential backoff",
+  
+  "timeout": 30,
+  "_timeout_note": "HTTP request timeout in seconds",
+  
+  "oauth_timeout": 300,
+  "_oauth_timeout_note": "OAuth authorization timeout in seconds (5 minutes)",
+  
+  "checkpoint_interval": 100,
+  "_checkpoint_interval_note": "Save checkpoint every N items for resumable exports",
+  
+  "daily_limit": 9500,
+  "_daily_limit_note": "Daily API request limit (Pocket allows 10,000, set lower for safety)",
+  
+  "hourly_limit": 300,
+  "_hourly_limit_note": "Hourly API request limit (Pocket allows 320, set lower for safety)"
+}
