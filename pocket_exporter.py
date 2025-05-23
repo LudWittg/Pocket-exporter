@@ -68,11 +68,11 @@ class ExportConfig:
     def from_file(cls, config_path: str) -> 'ExportConfig':
         """Load configuration from JSON file"""
         try:
-            with open(config_path, 'r') as f:
+            with open(config_path, 'r', encoding='utf-8') as f:
                 config_data = json.load(f)
             return cls(**{k: v for k, v in config_data.items() if k in cls.__annotations__})
         except (FileNotFoundError, json.JSONDecodeError) as e:
-            logging.debug(f"Config file not found or invalid: {e}")
+            logging.debug("Use default configuration, config file not found or invalid: %s", e)
             return cls()
 
 class SecureTokenStorage:
